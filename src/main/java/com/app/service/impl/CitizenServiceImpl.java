@@ -122,9 +122,9 @@ public class CitizenServiceImpl implements CitizenService {
          
         document.add(p);
          
-        PdfPTable table = new PdfPTable(5);
+        PdfPTable table = new PdfPTable(8);
         table.setWidthPercentage(100f);
-        table.setWidths(new float[] {1.5f, 3.5f, 3.0f, 3.0f, 1.5f});
+        table.setWidths(new float[] {1.5f, 2.0f, 3.0f, 2.0f, 1.5f,1.5f,1.5f,1.5f});
         table.setSpacingBefore(10);
         
         PdfPCell cell = new PdfPCell();
@@ -157,12 +157,10 @@ public class CitizenServiceImpl implements CitizenService {
         table.addCell(cell);
         
         cell.setPhrase(new Phrase("PlanStatus", font1));
-        table.addCell(cell);  
-    
-        table.addCell(cell); 
+        table.addCell(cell);   
         
         for(CitizenPlan pn:plan) {
-        	table.addCell(String.valueOf(pn.getCname()));
+        	table.addCell(String.valueOf(pn.getCid()));
         	table.addCell(pn.getCname());
         	table.addCell(pn.getEmail());
         	table.addCell(String.valueOf(pn.getPhNo()));
